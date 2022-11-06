@@ -20,6 +20,6 @@ sed -e "s/{{PADDED_DAY}}/${padded_day}/g" template/test_template.txt > tests/day
 touch tests/resources/day"${padded_day}".txt
 
 session=$(<.session)
-curl --cookie "session=${session}" https://adventofcode.com/2021/day/${day}/input -o main/resources/day${padded_day}-01.txt
+curl --cookie "session=${session}" https://adventofcode.com/2022/day/${day}/input -o main/resources/day${padded_day}-01.txt
 
 echo "Successfully created files"
