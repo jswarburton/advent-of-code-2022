@@ -51,4 +51,4 @@ Tests and formatting checks can be run locally in the activated `conda` environm
 
 To reformat run:
 
-    black --line-length 100 .
+    tox -e format
