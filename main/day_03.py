@@ -4,7 +4,6 @@ from main.file_reader import read
 def solve_1(input: list) -> int:
     sum = 0
     for i in input:
-
         first, second = i[: (len(i) // 2)], i[len(i) // 2 :]
 
         unique1, unique2 = set(first), set(second)
