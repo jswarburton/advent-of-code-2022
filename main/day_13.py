@@ -28,16 +28,16 @@ def solve_2(input: list) -> int:
 
 
 def compare(a, b):
-    if type(a) == list and type(b) == list:
+    if isinstance(a, list) and isinstance(b, list):
         for a1, b1 in zip(a, b):
             comparison = compare(a1, b1)
             if comparison:
                 return comparison
 
         return compare(len(a), len(b))
-    elif type(a) == list:
+    elif isinstance(a, list):
         return compare(a, [b])
-    elif type(b) == list:
+    elif isinstance(b, list):
         return compare([a], b)
     else:
         if a < b:
