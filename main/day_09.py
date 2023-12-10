@@ -55,9 +55,15 @@ def _move_tail(head_pos, tail_pos):
             head_pos[1] - 1 if tail_pos[1] < head_pos[1] else head_pos[1] + 1,
         )
     elif dist_x >= 2:
-        tail_pos = (head_pos[0] - 1 if tail_pos[0] < head_pos[0] else head_pos[0] + 1, head_pos[1])
+        tail_pos = (
+            head_pos[0] - 1 if tail_pos[0] < head_pos[0] else head_pos[0] + 1,
+            head_pos[1],
+        )
     elif dist_y >= 2:
-        tail_pos = (head_pos[0], head_pos[1] - 1 if tail_pos[1] < head_pos[1] else head_pos[1] + 1)
+        tail_pos = (
+            head_pos[0],
+            head_pos[1] - 1 if tail_pos[1] < head_pos[1] else head_pos[1] + 1,
+        )
     return tail_pos
 
 

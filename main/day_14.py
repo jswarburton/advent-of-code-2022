@@ -22,7 +22,9 @@ def solve_2(input: list) -> int:
 
     sand_positions = set()
     while True:
-        pos = _find_final_pos(blocked_positions.union(sand_positions), lowest_point, floor=True)
+        pos = _find_final_pos(
+            blocked_positions.union(sand_positions), lowest_point, floor=True
+        )
         if pos == (500, 0):
             return len(sand_positions) + 1
         else:
