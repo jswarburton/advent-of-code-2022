@@ -51,9 +51,13 @@ def _solve(input, num_iterations, divisor=1):
                 current_worry_level = eval(monkey.op)
                 current_worry_level //= divisor
                 if current_worry_level % monkey.divisor_test == 0:
-                    monkeys[monkey.true_monkey].items.append(current_worry_level % divisor_product)
+                    monkeys[monkey.true_monkey].items.append(
+                        current_worry_level % divisor_product
+                    )
                 else:
-                    monkeys[monkey.false_monkey].items.append(current_worry_level % divisor_product)
+                    monkeys[monkey.false_monkey].items.append(
+                        current_worry_level % divisor_product
+                    )
             monkey.items = []
     counts.sort()
     return counts[-1] * counts[-2]

@@ -3,11 +3,17 @@ from main.file_reader import read
 
 def solve_1(input: list) -> int:
     start = [
-        (row, col) for row, line in enumerate(input) for col, e in enumerate(line) if e == "S"
+        (row, col)
+        for row, line in enumerate(input)
+        for col, e in enumerate(line)
+        if e == "S"
     ][0]
-    end = [(row, col) for row, line in enumerate(input) for col, e in enumerate(line) if e == "E"][
-        0
-    ]
+    end = [
+        (row, col)
+        for row, line in enumerate(input)
+        for col, e in enumerate(line)
+        if e == "E"
+    ][0]
 
     return _fewest_steps(input, start, end)
 
@@ -19,9 +25,12 @@ def solve_2(input: list) -> int:
         for col, e in enumerate(line)
         if e == "S" or e == "a"
     ]
-    end = [(row, col) for row, line in enumerate(input) for col, e in enumerate(line) if e == "E"][
-        0
-    ]
+    end = [
+        (row, col)
+        for row, line in enumerate(input)
+        for col, e in enumerate(line)
+        if e == "E"
+    ][0]
 
     return min(_fewest_steps(input, start, end) for start in starts)
 
